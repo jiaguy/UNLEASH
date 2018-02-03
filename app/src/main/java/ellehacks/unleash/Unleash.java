@@ -39,7 +39,7 @@ public class Unleash extends AppCompatActivity
         textButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                launchEnterFeelingsActivity();
             }
         });
 
@@ -47,7 +47,7 @@ public class Unleash extends AppCompatActivity
         talkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                launchEnterFeelingsActivity();
             }
         });
 
