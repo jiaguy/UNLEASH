@@ -3,7 +3,6 @@ package ellehacks.unleash;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -41,6 +40,8 @@ public class MainActivity extends Activity implements
 
     private Player mPlayer;
 
+    private MoodPlaylist playlist;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +58,14 @@ public class MainActivity extends Activity implements
             AuthenticationClient.openLoginActivity(this, REQUEST_CODE, request);
         }
 
+        playlist = new MoodPlaylist();
+        AuthenticationRequest.Builder builder = new AuthenticationRequest.Builder(CLIENT_ID,
+                AuthenticationResponse.Type.TOKEN,
+                REDIRECT_URI);
+        builder.setScopes(new String[]{"user-read-private", "streaming"});
+        AuthenticationRequest request = builder.build();
+        
+        AuthenticationClient.openLoginActivity(this, REQUEST_CODE, request);
         Log.d("MainActivity", "MAIN ACTIVITY");
 
                /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -77,12 +86,14 @@ public class MainActivity extends Activity implements
                 launchEnterFeelingsActivity();
             }
         });
+
         //fade in home
         ImageView imageView = (ImageView) findViewById(R.id.unleash_logo);
         Animation startAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in_animation);
         imageView.startAnimation(startAnimation);
         textButton.startAnimation(startAnimation);
         talkButton.startAnimation(startAnimation);
+
     }
 
     private void launchEnterFeelingsActivity() {
@@ -117,6 +128,11 @@ public class MainActivity extends Activity implements
         }
     }
 
+    protected void playSongs(String mood){
+        mPlayer.setShuffle(null, true);
+        mPlayer.playUri(null, playlist.getPlaylist(mood), 0, 0);
+    }
+
     @Override
     protected void onDestroy() {
         // VERY IMPORTANT! This must always be called or else you will leak resources
@@ -147,8 +163,8 @@ public class MainActivity extends Activity implements
     @Override
     public void onLoggedIn() {
         Log.d("MainActivity", "User logged in");
+        playSongs("joy");
 
-        mPlayer.playUri(null, "spotify:track:2TpxZ7JUBn3uw46aR7qd6V", 0, 0);
     }
 
     @Override

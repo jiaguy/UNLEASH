@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class FeelingsResults extends AppCompatActivity {
 
@@ -26,9 +27,28 @@ public class FeelingsResults extends AppCompatActivity {
             }
         });
 
+        final ImageView playpause = (ImageView) findViewById(R.id.play_button);
+
+        playpause.setOnClickListener(new View.OnClickListener() {
+            boolean isPlaying = true;
+            @Override
+            public void onClick(View view) {
+                if(isPlaying == true) {
+                    playpause.setImageResource(R.drawable.pause_button);
+                    isPlaying = false;
+                }
+                else {
+                    playpause.setImageResource(R.drawable.play_button);
+                    isPlaying = true;
+                }
+            }
+        });
+
     }
 
     public void returnHome(){
         startActivity(new Intent(this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
     }
+
+
 }
