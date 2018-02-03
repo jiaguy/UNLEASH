@@ -261,7 +261,7 @@
         android:adjustViewBounds="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/play_button"
+        android:src="@drawable/pause_button"
         android:layout_below="@+id/list_layout"
         android:stateListAnimator="@anim/fade_in_animation"
         android:background="?android:selectableItemBackground" />
