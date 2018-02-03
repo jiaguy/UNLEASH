@@ -38,6 +38,8 @@ public class MainActivity extends Activity implements
 
     private Player mPlayer;
 
+    private MoodPlaylist playlist = new MoodPlaylist();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,6 +108,10 @@ public class MainActivity extends Activity implements
         }
     }
 
+    protected void playSongs(String mood){
+        mPlayer.playUri(null, playlist.getPlaylist(mood), 0, 0);
+    }
+    
     @Override
     protected void onDestroy() {
         // VERY IMPORTANT! This must always be called or else you will leak resources
