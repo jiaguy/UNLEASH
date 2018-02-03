@@ -10,7 +10,7 @@ public class EnterFeelings extends AppCompatActivity {
 
     private String caller;
 
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
