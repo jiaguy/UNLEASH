@@ -55,6 +55,5 @@
         android:layout_marginBottom="150dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Enter"
-        />
+        android:text="Enter" />
 </RelativeLayout>

@@ -53,15 +53,9 @@ public class MainActivity extends Activity implements
         AuthenticationClient.openLoginActivity(this, REQUEST_CODE, request);
         Log.d("MainActivity", "MAIN ACTIVITY");
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
                /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
-                launchEnterFeelingsActivity();
-            }
-        });
+
 
         Button textButton = (Button) findViewById(R.id.text_button_view);
         textButton.setOnClickListener(new View.OnClickListener() {
