@@ -3,7 +3,10 @@ package ellehacks.unleash;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.spotify.sdk.android.authentication.AuthenticationClient;
 import com.spotify.sdk.android.authentication.AuthenticationRequest;
@@ -39,6 +42,7 @@ public class MainActivity extends Activity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feelings_results);
+        setContentView(R.layout.activity_unleash);
 
         AuthenticationRequest.Builder builder = new AuthenticationRequest.Builder(CLIENT_ID,
                 AuthenticationResponse.Type.TOKEN,
@@ -47,6 +51,39 @@ public class MainActivity extends Activity implements
         AuthenticationRequest request = builder.build();
 
         AuthenticationClient.openLoginActivity(this, REQUEST_CODE, request);
+        Log.d("MainActivity", "MAIN ACTIVITY");
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
+                launchEnterFeelingsActivity();
+            }
+        });
+
+        Button textButton = (Button) findViewById(R.id.text_button_view);
+        textButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        Button talkButton = (Button) findViewById(R.id.talk_button_view);
+        talkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+    }
+
+    private void launchEnterFeelingsActivity() {
+        Intent intent = new Intent(this, EnterFeelings.class);
+        intent.putExtra("calledFrom", "home");
+        startActivity(intent);
     }
 
     @Override
