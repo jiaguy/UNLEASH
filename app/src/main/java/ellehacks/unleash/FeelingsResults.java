@@ -39,6 +39,7 @@ public class FeelingsResults extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         setContentView(R.layout.activity_feelings_results);
         getSupportActionBar().hide();
 
@@ -77,6 +78,24 @@ public class FeelingsResults extends AppCompatActivity implements
                     mPlayer.resume(null);
                     isPlaying = true;
                 }
+            }
+        });
+
+        final ImageView skipStartButton = (ImageView) findViewById(R.id.skip_to_start_button);
+
+        skipStartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mPlayer.skipToPrevious(null);
+            }
+        });
+
+        final ImageView skipButton = (ImageView) findViewById(R.id.skip_button);
+
+        skipButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mPlayer.skipToNext(null);
             }
         });
 

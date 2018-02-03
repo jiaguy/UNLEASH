@@ -23,7 +23,6 @@
         <ImageView
             android:id="@+id/unleash_logo"
             android:layout_alignParentTop="true"
-            android:paddingTop="0dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -33,11 +32,10 @@
             android:id="@+id/talk_button_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
             android:text="Talk"
             android:textColor="@color/colorGrey"
-            android:layout_below="@+id/unleash_logo"
-            android:layout_centerHorizontal="true"/>
+            android:layout_alignBottom="@+id/unleash_logo"
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 
