@@ -5,7 +5,6 @@
     android:id="@+id/content_unleash"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#000000"
     tools:context="ellehacks.unleash.MainActivity">
 
 

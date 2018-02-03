@@ -15,13 +15,8 @@ public class FeelingsResults extends AppCompatActivity {
         setContentView(R.layout.activity_feelings_results);
         getSupportActionBar().hide();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //TODO: implement spotify
-            }
-        });
+        //TODO: implement spotify
+
 
         ImageButton home = (ImageButton) findViewById(R.id.home_btn);
         home.setOnClickListener(new View.OnClickListener() {

@@ -34,10 +34,7 @@ public class EnterFeelings extends AppCompatActivity {
 
         EditText edit = (EditText)findViewById(R.id.feelings_textbox);
         String result = edit.getText().toString();      // result from textbox
-        Log.d("string result", result);
-
-        //TextView tview = (TextView)findViewById(R.id.textview1);
-        //tview.setText(result);
+        Log.d("!!!!string result", result);
 
         ImageButton home = (ImageButton) findViewById(R.id.home_btn);
         home.setOnClickListener(new View.OnClickListener() {
