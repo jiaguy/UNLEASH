@@ -20,7 +20,8 @@
         </activity>
         <activity
             android:name="com.spotify.sdk.android.authentication.LoginActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            />
         <activity android:name=".EnterFeelings" />
         <activity android:name=".FeelingsResults"></activity>
     </application>
