@@ -85,7 +85,7 @@ public class FeelingsResults extends AppCompatActivity implements
         skipStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    //put SKIPPIGN SHIT HERE
+                mPlayer.skipToPrevious(null);
             }
         });
 
@@ -94,7 +94,7 @@ public class FeelingsResults extends AppCompatActivity implements
         skipButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //put other SKIPPING SHIT HERE
+                mPlayer.skipToNext(null);
             }
         });
 
