@@ -228,6 +228,7 @@
             android:id="@+id/layout7"
             android:layout_width="match_parent"
             android:layout_height="30dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:layout_below="@+id/layout6"
             android:layout_marginEnd="12dp">
@@ -262,6 +263,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/pause_button"
+        android:backgroundTint="@color/colorAccent"
         android:layout_below="@+id/list_layout"
         android:stateListAnimator="@anim/fade_in_animation"
         android:background="?android:selectableItemBackground" />
