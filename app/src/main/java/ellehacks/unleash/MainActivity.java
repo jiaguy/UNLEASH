@@ -3,7 +3,6 @@ package ellehacks.unleash;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -38,7 +37,7 @@ public class MainActivity extends Activity implements
 
     private Player mPlayer;
 
-    private MoodPlaylist playlist = new MoodPlaylist();
+    private MoodPlaylist playlist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +45,7 @@ public class MainActivity extends Activity implements
         setContentView(R.layout.activity_feelings_results);
         setContentView(R.layout.activity_unleash);
 
+        playlist = new MoodPlaylist();
         AuthenticationRequest.Builder builder = new AuthenticationRequest.Builder(CLIENT_ID,
                 AuthenticationResponse.Type.TOKEN,
                 REDIRECT_URI);
@@ -74,6 +74,7 @@ public class MainActivity extends Activity implements
                 launchEnterFeelingsActivity();
             }
         });
+
     }
 
     private void launchEnterFeelingsActivity() {
@@ -143,8 +144,8 @@ public class MainActivity extends Activity implements
     @Override
     public void onLoggedIn() {
         Log.d("MainActivity", "User logged in");
+        playSongs("joy");
 
-        mPlayer.playUri(null, "spotify:track:2TpxZ7JUBn3uw46aR7qd6V", 0, 0);
     }
 
     @Override
