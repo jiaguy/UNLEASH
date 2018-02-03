@@ -1,10 +1,11 @@
 package ellehacks.unleash;
 
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Button;
 
@@ -27,7 +28,13 @@ public class EnterFeelings extends AppCompatActivity {
         enterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                launchFeelingsResultsActivity();
+                EditText feelingsBox = (EditText) findViewById(R.id.feelings_textbox);
+                if(!((feelingsBox.getText()).toString().trim().isEmpty())){
+                    launchFeelingsResultsActivity();
+                }else{
+                    Snackbar.make(view, "Enter a valid note", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
             }
         });
 

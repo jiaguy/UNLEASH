@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:background="?android:selectableItemBackground"
-        android:src="@drawable/dark_boat" />
+        android:src="@drawable/moon" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:layout_height="44dp"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"
-            android:src="@drawable/home"
+            android:src="@drawable/home2"
             android:background="?android:selectableItemBackground"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"/>
