@@ -34,6 +34,6 @@ public class FeelingsResults extends AppCompatActivity {
     }
 
     public void returnHome(){
-        startActivity(new Intent(this, Unleash.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+        startActivity(new Intent(this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
     }
 }

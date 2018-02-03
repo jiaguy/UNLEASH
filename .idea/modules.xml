@@ -3,9 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UNLEASH.iml" filepath="$PROJECT_DIR$/UNLEASH.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../muska/StudioProjects/UNLEASH/UNLEASH.iml" filepath="$PROJECT_DIR$/../../../muska/StudioProjects/UNLEASH/UNLEASH.iml" />
+      <module fileurl="file://$USER_HOME$/muska/StudioProjects/UNLEASH/UNLEASH.iml" filepath="$USER_HOME$/muska/StudioProjects/UNLEASH/UNLEASH.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../muska/StudioProjects/UNLEASH/app/app.iml" filepath="$PROJECT_DIR$/../../../muska/StudioProjects/UNLEASH/app/app.iml" />
+      <module fileurl="file://$USER_HOME$/muska/StudioProjects/UNLEASH/app/app.iml" filepath="$USER_HOME$/muska/StudioProjects/UNLEASH/app/app.iml" />
     </modules>
   </component>
 </project>
