@@ -21,6 +21,8 @@ public class EnterFeelings extends AppCompatActivity {
 
         caller = getIntent().getExtras().getString("calledFrom");
 
+        getWindow().setBackgroundDrawableResource(R.drawable.deadtree) ;
+
         Button enterButton = (Button) findViewById(R.id.enter_button_view);
         enterButton.setOnClickListener(new View.OnClickListener() {
             @Override
