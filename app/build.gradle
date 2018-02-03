@@ -33,10 +33,10 @@ dependencies {
     })
 
     // This library handles authentication and authorization
-    compile 'com.spotify.sdk:spotify-auth:1.0.0-beta12@aar'
+    compile 'com.spotify.sdk:spotify-auth:beta22-noconnect-2.20b@aar'
 
     // This library handles music playback
-    compile 'com.spotify.sdk:spotify-player:1.0.0-beta12@aar'
+    compile 'com.spotify.sdk:spotify-player:beta22-noconnect-2.20b@aar'
 
     // All other dependencies for your app should also be here:
     compile 'com.android.support:appcompat-v7:25.1.1'
