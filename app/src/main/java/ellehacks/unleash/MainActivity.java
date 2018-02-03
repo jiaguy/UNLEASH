@@ -67,7 +67,7 @@ public class MainActivity extends Activity implements
         textButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                launchEnterFeelingsActivity();
             }
         });
 
@@ -75,7 +75,7 @@ public class MainActivity extends Activity implements
         talkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                launchEnterFeelingsActivity();
             }
         });
     }
