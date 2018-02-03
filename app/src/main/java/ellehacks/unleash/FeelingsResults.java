@@ -80,6 +80,24 @@ public class FeelingsResults extends AppCompatActivity implements
             }
         });
 
+        final ImageView skipStartButton = (ImageView) findViewById(R.id.skip_to_start_button);
+
+        skipStartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    //put SKIPPIGN SHIT HERE
+            }
+        });
+
+        final ImageView skipButton = (ImageView) findViewById(R.id.skip_button);
+
+        skipButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //put other SKIPPING SHIT HERE
+            }
+        });
+
     }
 
     @Override
