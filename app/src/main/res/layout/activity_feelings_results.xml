@@ -16,11 +16,14 @@
         android:src="@drawable/dark_boat" />
 
     <RelativeLayout
+        android:id="@+id/list_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="19dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
 
         <ImageButton
             android:id="@+id/home_btn"
@@ -235,6 +238,7 @@
                 android:layout_weight="1"
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="10dp"
+                android:textColor="@color/colorAccent"
                 android:text="Sad"
                 android:textSize="16dp" />
             <TextView
@@ -244,7 +248,22 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="10dp"
                 android:text="100"
+                android:textColor="@color/colorAccent"
                 android:textSize="16dp" />
         </LinearLayout>
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/play_button"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/play_button"
+        android:layout_below="@+id/list_layout"
+        android:stateListAnimator="@anim/fade_in_animation"
+        android:background="?android:selectableItemBackground" />
+
 </RelativeLayout>
