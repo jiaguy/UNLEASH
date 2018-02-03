@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Button;
 
 public class EnterFeelings extends AppCompatActivity {
 
@@ -20,8 +21,8 @@ public class EnterFeelings extends AppCompatActivity {
 
         caller = getIntent().getExtras().getString("calledFrom");
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        Button enterButton = (Button) findViewById(R.id.enter_button_view);
+        enterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 launchFeelingsResultsActivity();

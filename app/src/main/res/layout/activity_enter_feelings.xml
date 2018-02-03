@@ -11,18 +11,29 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ellehacks.unleash.EnterFeelings">
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        app:srcCompat="@android:drawable/ic_dialog_email"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginRight="@dimen/fab_margin"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="123dp" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/relativeLayout">
 
+        <TextView
+            android:id="@+id/question_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="How are you feeling today?" />
+
+        <EditText
+            android:id="@+id/feelings_textbox"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="104dp"
+            android:backgroundTint="@android:color/darker_gray"
+            android:enabled="true"
+            android:hint="Enter your feelings..." />
+    </RelativeLayout>
     <ImageButton
         android:id="@+id/home_btn"
         android:layout_width="44dp"
@@ -34,15 +45,16 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/textView3"
-        android:layout_marginTop="104dp"
-        android:backgroundTint="@android:color/darker_gray"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:enabled="true"
-        android:hint="Enter your feelings..." />
-
+    <Button
+        android:id="@+id/enter_button_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginBottom="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Enter"
+        />
 </RelativeLayout>
