@@ -17,6 +17,7 @@ public class EnterFeelings extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         setContentView(R.layout.activity_enter_feelings);
         getSupportActionBar().hide();
 

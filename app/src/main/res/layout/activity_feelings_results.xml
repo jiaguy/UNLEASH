@@ -43,7 +43,8 @@
             android:layout_centerHorizontal="true"
             android:textColor="@color/colorAccent"
             android:text="Results"
-            android:textSize="30dp"/>
+            android:textSize="30dp"
+            android:fontFamily="sans-serif" />
 
         <LinearLayout
             android:id="@+id/layout"
@@ -297,10 +298,7 @@
             android:layout_height="44dp"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
             android:src="@drawable/skip_to_start_button"
-            android:layout_below="@+id/list_layout"
             android:tint="@color/colorAccent"
             android:background="?android:selectableItemBackground" />
         <ImageView
@@ -309,11 +307,7 @@
             android:layout_height="44dp"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
             android:src="@drawable/pause_button"
-            android:layout_marginLeft="20dp"
-            android:layout_below="@+id/list_layout"
             android:tint="@color/colorAccent"
             android:background="?android:selectableItemBackground" />
         <ImageView
@@ -322,11 +316,7 @@
             android:layout_height="44dp"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="20dp"
             android:src="@drawable/skip_button"
-            android:layout_below="@+id/list_layout"
             android:tint="@color/colorAccent"
             android:background="?android:selectableItemBackground" />
     </LinearLayout>

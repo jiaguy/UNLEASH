@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../../../muska/muska/StudioProjects/UNLEASH/UNLEASH.iml" filepath="$PROJECT_DIR$/../../../../muska/muska/StudioProjects/UNLEASH/UNLEASH.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../muska/StudioProjects/UNLEASH/UNLEASH.iml" filepath="$PROJECT_DIR$/../../../../muska/StudioProjects/UNLEASH/UNLEASH.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UNLEASH.iml" filepath="$PROJECT_DIR$/UNLEASH.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../muska/muska/StudioProjects/UNLEASH/app/app.iml" filepath="$PROJECT_DIR$/../../../../muska/muska/StudioProjects/UNLEASH/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../muska/StudioProjects/UNLEASH/app/app.iml" filepath="$PROJECT_DIR$/../../../../muska/StudioProjects/UNLEASH/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/unleash.iml" filepath="$PROJECT_DIR$/unleash.iml" />
     </modules>
   </component>
 </project>
