@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class Unleash extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -31,6 +32,22 @@ public class Unleash extends AppCompatActivity
                /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
                 launchEnterFeelingsActivity();
+            }
+        });
+
+        Button textButton = (Button) findViewById(R.id.text_button_view);
+        textButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        Button talkButton = (Button) findViewById(R.id.talk_button_view);
+        talkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
 
