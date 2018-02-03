@@ -45,6 +45,7 @@ public class MainActivity extends Activity
 
         if(Unleash_App.getState() == 0){//do only once on application start
             Unleash_App.setState(1);
+            Log.d("Unleash_App", "HAS STARTED AND ONLY SEE THIS ONE TIME");
             AuthenticationRequest.Builder builder = new AuthenticationRequest.Builder(CLIENT_ID,
                     AuthenticationResponse.Type.TOKEN,
                     REDIRECT_URI);
