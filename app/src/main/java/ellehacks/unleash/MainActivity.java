@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.spotify.sdk.android.authentication.AuthenticationClient;
 import com.spotify.sdk.android.authentication.AuthenticationRequest;
@@ -44,18 +47,20 @@ public class MainActivity extends Activity implements
         setContentView(R.layout.activity_feelings_results);
         setContentView(R.layout.activity_unleash);
 
-        AuthenticationRequest.Builder builder = new AuthenticationRequest.Builder(CLIENT_ID,
-                AuthenticationResponse.Type.TOKEN,
-                REDIRECT_URI);
-        builder.setScopes(new String[]{"user-read-private", "streaming"});
-        AuthenticationRequest request = builder.build();
+        if(Unleash_App.getState() == 0){//do only once on application start
+            Unleash_App.setState(1);
+            AuthenticationRequest.Builder builder = new AuthenticationRequest.Builder(CLIENT_ID,
+                    AuthenticationResponse.Type.TOKEN,
+                    REDIRECT_URI);
+            builder.setScopes(new String[]{"user-read-private", "streaming"});
+            AuthenticationRequest request = builder.build();
+            AuthenticationClient.openLoginActivity(this, REQUEST_CODE, request);
+        }
 
-        AuthenticationClient.openLoginActivity(this, REQUEST_CODE, request);
         Log.d("MainActivity", "MAIN ACTIVITY");
 
                /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
-
 
         Button textButton = (Button) findViewById(R.id.text_button_view);
         textButton.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +77,12 @@ public class MainActivity extends Activity implements
                 launchEnterFeelingsActivity();
             }
         });
+        //fade in home
+        ImageView imageView = (ImageView) findViewById(R.id.unleash_logo);
+        Animation startAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in_animation);
+        imageView.startAnimation(startAnimation);
+        textButton.startAnimation(startAnimation);
+        talkButton.startAnimation(startAnimation);
     }
 
     private void launchEnterFeelingsActivity() {
