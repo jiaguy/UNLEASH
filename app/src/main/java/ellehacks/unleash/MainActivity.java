@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.spotify.sdk.android.authentication.AuthenticationClient;
 import com.spotify.sdk.android.authentication.AuthenticationRequest;
@@ -55,7 +58,7 @@ public class MainActivity extends Activity implements
 
                /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
-
+        fadeInHome();
 
         Button textButton = (Button) findViewById(R.id.text_button_view);
         textButton.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +81,12 @@ public class MainActivity extends Activity implements
         Intent intent = new Intent(this, EnterFeelings.class);
         intent.putExtra("calledFrom", "home");
         startActivity(intent);
+    }
+
+    public void fadeInHome(){
+        ImageView imageView = (ImageView) findViewById(R.id.unleash_logo);
+        Animation startAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in_animation);
+        imageView.startAnimation(startAnimation);
     }
 
     @Override
