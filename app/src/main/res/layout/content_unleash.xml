@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:background="?android:selectableItemBackground"
-        android:src="@drawable/mountain_background" />
+        android:src="@drawable/mountain_background2" />
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -9,6 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/deadtree"
     tools:context="ellehacks.unleash.EnterFeelings">
 
     <RelativeLayout
@@ -23,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
+            android:textColor="@color/colorAccent"
             android:text="How are you feeling today?" />
 
         <EditText
@@ -32,6 +34,7 @@
             android:layout_marginTop="104dp"
             android:backgroundTint="@android:color/darker_gray"
             android:enabled="true"
+            android:textColor="@color/colorAccent"
             android:hint="Enter your feelings..." />
     </RelativeLayout>
     <ImageButton
