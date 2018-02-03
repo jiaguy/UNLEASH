@@ -71,14 +71,6 @@ public class MainActivity extends Activity implements
                /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
 
-        Button textButton = (Button) findViewById(R.id.text_button_view);
-        textButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                launchEnterFeelingsActivity();
-            }
-        });
-
         Button talkButton = (Button) findViewById(R.id.talk_button_view);
         talkButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +83,6 @@ public class MainActivity extends Activity implements
         ImageView imageView = (ImageView) findViewById(R.id.unleash_logo);
         Animation startAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in_animation);
         imageView.startAnimation(startAnimation);
-        textButton.startAnimation(startAnimation);
         talkButton.startAnimation(startAnimation);
 
     }
