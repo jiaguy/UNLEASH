@@ -42,6 +42,7 @@
             android:backgroundTint="@android:color/darker_gray"
             android:enabled="true"
             android:textColor="@color/colorAccent"
+            android:textColorHint="@android:color/darker_gray"
             android:hint="Enter your feelings..." />
     </RelativeLayout>
     <ImageButton
