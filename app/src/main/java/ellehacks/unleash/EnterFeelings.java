@@ -29,6 +29,9 @@ public class EnterFeelings extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 EditText feelingsBox = (EditText) findViewById(R.id.feelings_textbox);
+                String result = feelingsBox.getText().toString();      // result from textbox
+                ToneAnalyze.analyzedTone(result);
+                launchFeelingsResultsActivity();
                 if(!((feelingsBox.getText()).toString().trim().isEmpty())){
                     launchFeelingsResultsActivity();
                 }else{
