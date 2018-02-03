@@ -8,6 +8,10 @@ import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.ToneAnalysis;
 import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.ToneOptions;
 import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.ToneScore;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
 import java.util.List;
 
 
@@ -19,7 +23,6 @@ public class ToneAnalyze {
             new ToneAnalyzer("2017-07-01");
     public static String username = "d580bc54-eba9-4937-b313-e991bbf335da";
     public static String password = "QUZ8YgJeoVvU";
-
 
     public static void analyzedTone(String dataToAnalyze) {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -35,7 +38,6 @@ public class ToneAnalyze {
             for(ToneScore result: toneResult) {
                 double score = result.getScore();
                 String toneName = result.getToneName();
-                System.out.println("1111111111:"+ score +":" + toneName);
             }
         }
         catch (Exception ex){
