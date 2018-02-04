@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import java.util.Date;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Button;
@@ -44,12 +45,11 @@ public class EnterFeelings extends AppCompatActivity {
                 if(!((feelingsBox.getText()).toString().trim().isEmpty())){
 
                     String mood = sortedToneList.get(0).getToneName();
-                    DateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY");
-                    Calendar cal = Calendar.getInstance();
-
+                    Date date = Calendar.getInstance().getTime();
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                     //save the entry
                     writeToFile(mood);
-                    writeToFile(dateFormat.format(cal));
+                    writeToFile(sdf.format(date));
                     writeToFile(result);
 
                     //launch next activity
