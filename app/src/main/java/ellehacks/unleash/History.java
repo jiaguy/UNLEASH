@@ -96,7 +96,7 @@ public class History extends AppCompatActivity {
                 String _entry = splitJournal[++i];
                 String _year = splitJournal[++i];
 
-                movieList.add(new JournalEntry(_mood, _entry, _year));
+                movieList.add(0, new JournalEntry(_mood, _entry, _year));
             }
         }
 
