@@ -56,6 +56,7 @@ public class History extends AppCompatActivity {
         Movie movie = new Movie("Mad Max: Fury Road", "Action & Adventure", "2015");
         movieList.add(movie);
 
+        
         movie = new Movie("Inside Out", "Animation, Kids & Family", "2015");
         movieList.add(movie);
 
