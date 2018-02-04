@@ -1,7 +1,6 @@
 package ellehacks.unleash;
 
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,7 +8,6 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.view.View;
 
 import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.ToneScore;
 import com.spotify.sdk.android.authentication.AuthenticationClient;
@@ -38,7 +36,6 @@ public class FeelingsResults extends AppCompatActivity implements
     private Player mPlayer;
 
     private MoodPlaylist playlist;
-
 
     // Request code that will be used to verify if the result comes from correct activity
     // Can be any integer
@@ -70,6 +67,14 @@ public class FeelingsResults extends AppCompatActivity implements
             }
         });
 
+        ImageButton history = (ImageButton) findViewById(R.id.history_btn);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchHistoryActivity();
+            }
+        });
+
         final ImageView playpause = (ImageView) findViewById(R.id.play_button);
         final TextView songName = (TextView) findViewById(R.id.song_title_label);
         final TextView artistName = (TextView) findViewById(R.id.song_artist_label);
@@ -77,15 +82,12 @@ public class FeelingsResults extends AppCompatActivity implements
 
         playpause.setOnClickListener(new View.OnClickListener() {
             boolean isPlaying = true;
-
             @Override
             public void onClick(View view) {
                 if (isPlaying == true) {
                     playpause.setImageResource(R.drawable.play_button);
                     mPlayer.pause(null);
                     isPlaying = false;
-
-
                 } else {
                     playpause.setImageResource(R.drawable.pause_button);
                     mPlayer.resume(null);
@@ -145,8 +147,8 @@ public class FeelingsResults extends AppCompatActivity implements
         } else {
             //TODO: Handle case for when not enough data was available
         }
-    }
 
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
@@ -163,7 +165,6 @@ public class FeelingsResults extends AppCompatActivity implements
                         mPlayer = spotifyPlayer;
                         mPlayer.addConnectionStateCallback(FeelingsResults.this);
                         mPlayer.addNotificationCallback(FeelingsResults.this);
-
                     }
 
                     @Override
@@ -178,11 +179,14 @@ public class FeelingsResults extends AppCompatActivity implements
     public void playSongs(String mood){
         mPlayer.setShuffle(null, true);
         mPlayer.playUri(null, playlist.getPlaylist(mood), 0, 0);
-
     }
 
     public void returnHome(){
         startActivity(new Intent(this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+    }
+
+    public void launchHistoryActivity(){
+        startActivity(new Intent(this, History.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
     }
 
     @Override

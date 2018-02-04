@@ -69,6 +69,14 @@ public class EnterFeelings extends AppCompatActivity {
             }
         });
 
+        ImageButton history = (ImageButton) findViewById(R.id.history_btn);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchHistoryActivity();
+            }
+        });
+
     }
 
     public void launchFeelingsResultsActivity() {
@@ -93,5 +101,9 @@ public class EnterFeelings extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void launchHistoryActivity(){
+        startActivity(new Intent(this, History.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
     }
 }
