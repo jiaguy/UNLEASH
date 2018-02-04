@@ -1,5 +1,6 @@
 package ellehacks.unleash;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,10 @@ import android.widget.Button;
 
 import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.ToneScore;
 
+import java.io.FileOutputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 public class EnterFeelings extends AppCompatActivity {
@@ -34,9 +39,20 @@ public class EnterFeelings extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 EditText feelingsBox = (EditText) findViewById(R.id.feelings_textbox);
-                String result = feelingsBox.getText().toString();      // result from textbox
+                final String result = feelingsBox.getText().toString();      // result from textbox
                 sortedToneList = ToneAnalyze.analyzedTone(result);
                 if(!((feelingsBox.getText()).toString().trim().isEmpty())){
+
+                    String mood = sortedToneList.get(0).getToneName();
+                    DateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY");
+                    Calendar cal = Calendar.getInstance();
+
+                    //save the entry
+                    writeToFile(mood);
+                    writeToFile(dateFormat.format(cal));
+                    writeToFile(result);
+
+                    //launch next activity
                     launchFeelingsResultsActivity();
                 }else{
                     Snackbar.make(view, "Enter a valid note", Snackbar.LENGTH_LONG)
@@ -63,5 +79,19 @@ public class EnterFeelings extends AppCompatActivity {
 
     public void returnHome(){
         startActivity(new Intent(this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+    }
+
+    public void writeToFile(String message){
+        String filename = "journal.txt";
+        FileOutputStream outputStream;
+
+        try {
+            outputStream = openFileOutput(filename, Context.MODE_APPEND);
+            outputStream.write(message.getBytes());
+            outputStream.write("*".getBytes());// use a * as delimiter
+            outputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

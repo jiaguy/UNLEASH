@@ -216,6 +216,11 @@ public class FeelingsResults extends AppCompatActivity implements
     public void onLoggedIn() {
         Log.d("MainActivity", "User logged in");
         playSongs(sortedToneList.get(0).getToneName());
+        try {
+            Thread.sleep(800L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         TextView songName = (TextView) findViewById(R.id.song_title_label);
         TextView artistName = (TextView) findViewById(R.id.song_artist_label);
         songName.setText(mPlayer.getMetadata().currentTrack.name);

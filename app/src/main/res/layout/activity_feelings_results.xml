@@ -228,7 +228,7 @@
         </LinearLayout>
         <TextView
             android:id="@+id/song_title_label"
-            android:text="Song Title"
+            android:text=""
             android:textColor="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -239,7 +239,7 @@
             />
         <TextView
             android:id="@+id/song_artist_label"
-            android:text="Artist"
+            android:text=""
             android:textColor="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
