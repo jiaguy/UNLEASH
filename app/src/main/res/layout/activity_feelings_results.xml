@@ -93,7 +93,7 @@
                 android:layout_weight="1"
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="10dp"
-                android:text="Sad"
+                android:text=""
                 android:textColor="@color/colorAccent"
                 android:textSize="16dp" />
 
@@ -103,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="10dp"
-                android:text="100"
+                android:text=""
                 android:textColor="@color/colorAccent"
                 android:textSize="16dp" />
         </LinearLayout>
@@ -124,7 +124,7 @@
                 android:layout_weight="1"
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="10dp"
-                android:text="Sad"
+                android:text=""
                 android:textColor="@color/colorAccent"
                 android:textSize="16dp" />
 
@@ -134,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="10dp"
-                android:text="100"
+                android:text=""
                 android:textColor="@color/colorAccent"
                 android:textSize="16dp" />
         </LinearLayout>
@@ -155,7 +155,7 @@
                 android:layout_weight="1"
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="10dp"
-                android:text="Sad"
+                android:text=""
                 android:textColor="@color/colorAccent"
                 android:textSize="16dp" />
 
@@ -165,7 +165,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="10dp"
-                android:text="100"
+                android:text=""
                 android:textColor="@color/colorAccent"
                 android:textSize="16dp" />
         </LinearLayout>
@@ -184,7 +184,7 @@
                 android:layout_weight="1"
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="10dp"
-                android:text="Sad"
+                android:text=""
                 android:textColor="@color/colorAccent"
                 android:textSize="16dp" />
             <TextView
@@ -193,7 +193,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="10dp"
-                android:text="100"
+                android:text=""
                 android:textColor="@color/colorAccent"
                 android:textSize="16dp" />
         </LinearLayout>
@@ -213,7 +213,7 @@
                 android:layout_weight="1"
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="10dp"
-                android:text="Sad"
+                android:text=""
                 android:textColor="@color/colorAccent"
                 android:textSize="16dp" />
             <TextView
@@ -222,7 +222,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="10dp"
-                android:text="100"
+                android:text=""
                 android:textColor="@color/colorAccent"
                 android:textSize="16dp" />
         </LinearLayout>
@@ -242,7 +242,7 @@
                 android:layout_weight="1"
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="10dp"
-                android:text="Sad"
+                android:text=""
                 android:textColor="@color/colorAccent"
                 android:textSize="16dp" />
             <TextView
@@ -251,7 +251,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="10dp"
-                android:text="100"
+                android:text=""
                 android:textColor="@color/colorAccent"
                 android:textSize="16dp" />
         </LinearLayout>
@@ -272,7 +272,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/colorAccent"
-                android:text="Sad"
+                android:text=""
                 android:textSize="16dp" />
             <TextView
                 android:id="@+id/tone_amount7"
@@ -280,7 +280,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="10dp"
-                android:text="100"
+                android:text=""
                 android:textColor="@color/colorAccent"
                 android:textSize="16dp" />
         </LinearLayout>

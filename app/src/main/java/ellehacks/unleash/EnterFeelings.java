@@ -36,7 +36,6 @@ public class EnterFeelings extends AppCompatActivity {
                 EditText feelingsBox = (EditText) findViewById(R.id.feelings_textbox);
                 String result = feelingsBox.getText().toString();      // result from textbox
                 sortedToneList = ToneAnalyze.analyzedTone(result);
-                launchFeelingsResultsActivity();
                 if(!((feelingsBox.getText()).toString().trim().isEmpty())){
                     launchFeelingsResultsActivity();
                 }else{

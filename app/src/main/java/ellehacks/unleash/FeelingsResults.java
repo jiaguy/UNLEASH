@@ -23,6 +23,8 @@ import com.spotify.sdk.android.player.PlayerEvent;
 import com.spotify.sdk.android.player.Spotify;
 import com.spotify.sdk.android.player.SpotifyPlayer;
 
+import java.text.DecimalFormat;
+
 import static ellehacks.unleash.EnterFeelings.sortedToneList;
 
 public class FeelingsResults extends AppCompatActivity implements
@@ -106,47 +108,48 @@ public class FeelingsResults extends AppCompatActivity implements
 
         // maps sorted tone list to tone labels
         int count = 1;
+        if (sortedToneList != null) {
+            for (ToneScore t : sortedToneList) {
+                String toneLabelID = "tone_label" + count;
+                String toneAmountID = "tone_amount" + count;
+                int labelID = getResources().getIdentifier(toneLabelID, "id", getPackageName());
+                int amountID = getResources().getIdentifier(toneAmountID, "id", getPackageName());
+                TextView toneLabel = (TextView) findViewById(labelID);
+                TextView toneAmount = (TextView) findViewById(amountID);
+                toneLabel.setText(t.getToneName());
 
-        for(ToneScore t: sortedToneList) {
-            String toneLabelID = "tone_label" + count;
-            String toneAmountID = "tone_amount" + count;
-            int labelID = getResources().getIdentifier(toneLabelID, "id", getPackageName());
-            int amountID = getResources().getIdentifier(toneAmountID, "id", getPackageName());
-            TextView toneLabel = (TextView) findViewById(labelID);
-            TextView toneAmount = (TextView) findViewById(amountID);
-            toneLabel.setText(t.getToneName());
+                double score = t.getScore() * 100;
+                DecimalFormat df = new DecimalFormat("#0.00");
 
-            double score = t.getScore() * 100;
-            //score = Math.round(score, 2);
-            toneAmount.setText("" + score);
-            count ++;
+                String scoreString = "" + df.format(score);
+                toneAmount.setText("" + scoreString);
+                toneLabel.setVisibility(View.VISIBLE);
+                toneAmount.setVisibility(View.VISIBLE);
+                count++;
+            }
+
+            /*for (int i = count; i <= 7; i ++) {
+                TextView toneLabel6 = (TextView) findViewById(R.id.tone_label6);
+                TextView toneAmount6 = (TextView) findViewById(R.id.tone_amount6);
+                TextView toneLabel7 = (TextView) findViewById(R.id.tone_label7);
+                TextView toneAmount7 = (TextView) findViewById(R.id.tone_amount7);
+
+                String toneLabelID = "tone_label" + count;
+                String toneAmountID = "tone_amount" + count;
+                int labelID = getResources().getIdentifier(toneLabelID, "id", getPackageName());
+                int amountID = getResources().getIdentifier(toneAmountID, "id", getPackageName());
+                TextView toneLabel = (TextView) findViewById(labelID);
+                TextView toneAmount = (TextView) findViewById(amountID);
+
+                toneLabel.setVisibility(View.INVISIBLE);
+                toneAmount.setVisibility(View.INVISIBLE);
+
+                count ++;
+            }*/
+
+        }else{
+            //TODO: Handle case for when not enough data was available
         }
-
-        for (int i = count; i <= 7; i ++) {
-            TextView toneLabel6 = (TextView) findViewById(R.id.tone_label6);
-            TextView toneAmount6 = (TextView) findViewById(R.id.tone_amount6);
-            TextView toneLabel7 = (TextView) findViewById(R.id.tone_label7);
-            TextView toneAmount7 = (TextView) findViewById(R.id.tone_amount7);
-
-            String toneLabelID = "tone_label" + count;
-            String toneAmountID = "tone_amount" + count;
-            int labelID = getResources().getIdentifier(toneLabelID, "id", getPackageName());
-            int amountID = getResources().getIdentifier(toneAmountID, "id", getPackageName());
-            TextView toneLabel = (TextView) findViewById(labelID);
-            TextView toneAmount = (TextView) findViewById(amountID);
-
-            toneLabel.setVisibility(View.INVISIBLE);
-            toneAmount.setVisibility(View.INVISIBLE);
-
-            count ++;
-        }
-
-
-                /*String buttonID = "btn" + i + "-" + j;
-                int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
-                buttons[i][j] = ((Button) findViewById(resID));
-                buttons[i][j].setOnClickListener(this);*/
-
 
     }
 
