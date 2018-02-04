@@ -233,8 +233,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/layout5"
+            android:textSize="18sp"
+            android:layout_marginTop="100dp"
+            android:layout_centerInParent="true"
+            />
+        <TextView
+            android:id="@+id/song_artist_label"
+            android:text="Artist"
+            android:textColor="@color/colorAccent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/song_title_label"
             android:textSize="16sp"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="5dp"
             android:layout_centerInParent="true"
             />
     </RelativeLayout>
