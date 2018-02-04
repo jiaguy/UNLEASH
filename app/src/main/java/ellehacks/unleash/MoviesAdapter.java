@@ -19,12 +19,12 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
     private List<Movie> moviesList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView title, year, genre;
+        public TextView mood, year, entry;
 
         public MyViewHolder(View view) {
             super(view);
-            title = (TextView) view.findViewById(R.id.title);
-            genre = (TextView) view.findViewById(R.id.genre);
+            mood = (TextView) view.findViewById(R.id.mood);
+            entry = (TextView) view.findViewById(R.id.entry);
             year = (TextView) view.findViewById(R.id.year);
         }
     }
@@ -45,8 +45,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Movie movie = moviesList.get(position);
-        holder.title.setText(movie.getTitle());
-        holder.genre.setText(movie.getGenre());
+        holder.mood.setText(movie.getmood());
+        holder.entry.setText(movie.getentry());
         holder.year.setText(movie.getYear());
     }
 

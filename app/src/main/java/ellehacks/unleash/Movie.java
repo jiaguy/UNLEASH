@@ -3,23 +3,23 @@ package ellehacks.unleash;
  * Created by Jiaying on 2018-02-04.
  */
 public class Movie {
-    private String title, genre, year;
+    private String mood, entry, year;
 
     public Movie() {
     }
 
-    public Movie(String title, String genre, String year) {
-        this.title = title;
-        this.genre = genre;
+    public Movie(String mood, String entry, String year) {
+        this.mood = mood;
+        this.entry = entry;
         this.year = year;
     }
 
-    public String getTitle() {
-        return title;
+    public String getmood() {
+        return mood;
     }
 
-    public void setTitle(String name) {
-        this.title = name;
+    public void setmood(String name) {
+        this.mood = name;
     }
 
     public String getYear() {
@@ -30,11 +30,11 @@ public class Movie {
         this.year = year;
     }
 
-    public String getGenre() {
-        return genre;
+    public String getentry() {
+        return entry;
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
+    public void setentry(String entry) {
+        this.entry = entry;
     }
 }

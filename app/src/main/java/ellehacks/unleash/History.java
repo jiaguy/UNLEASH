@@ -31,6 +31,7 @@ public class History extends AppCompatActivity {
         //Toolbar toolbar = (Toolbar findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
+        
         /*ImageButton home = (ImageButton) findViewById(R.id.home_btn);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
