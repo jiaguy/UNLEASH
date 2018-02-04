@@ -27,13 +27,19 @@
         android:background="?android:selectableItemBackground"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"/>
+    <TextView
+        android:id="@+id/phone_box"
+        android:layout_toRightOf="@id/phone_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="TESTESTEST"
+        android:visibility="visible"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true" >
-
-
 
         <ImageView
             android:id="@+id/unleash_logo"

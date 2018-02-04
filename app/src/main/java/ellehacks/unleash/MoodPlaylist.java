@@ -17,10 +17,7 @@ public class MoodPlaylist {
                                     "spotify:user:spotify:playlist:37i9dQZF1DWSf2RDTDayIx"};
     private final String[] sadness = {"spotify:user:spotify:playlist:37i9dQZF1DX3YSRoSdA634",
                                         "spotify:user:spotify:playlist:37i9dQZF1DWSqBruwoIXkA"};
-    private final String[] analytical = {"spotify:user:spotify:playlist:37i9dQZF1DWWEJlAGA9gs0"};
-    private final String[] confident = {"spotify:user:spotify:playlist:37i9dQZF1DX4fpCWaHOned",
-                                            "spotify:user:spotify:playlist:37i9dQZF1DX1tyCD9QhIWF"};
-    private final String[] tentative = {"spotify:user:spotify:playlist:37i9dQZF1DX56qfiUZBncF"};
+    private final String[] disgust = {"spotify:user:spotify:playlist:37i9dQZF1DWWEJlAGA9gs0"};
 
     public String getPlaylist(String tone){
         return determinePlaylist(tone);
@@ -38,12 +35,8 @@ public class MoodPlaylist {
                 return joy[random.nextInt(joy.length)];
             case "Sadness":
                 return sadness[random.nextInt(sadness.length)];
-            case "Analytical":
-                return analytical[random.nextInt(analytical.length)];
-            case "Confident":
-                return confident[random.nextInt(confident.length)];
-            case "Tentative":
-                return tentative[random.nextInt(tentative.length)];
+            case "Disgust":
+                return disgust[random.nextInt(disgust.length)];
             default:
                 return null;
         }

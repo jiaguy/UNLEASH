@@ -226,73 +226,15 @@
                 android:textColor="@color/colorAccent"
                 android:textSize="16dp" />
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layout6"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/layout5"
-            android:layout_marginEnd="12dp">
-            <TextView
-                android:id="@+id/tone_label6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_alignParentLeft="true"
-                android:layout_marginTop="10dp"
-                android:text=""
-                android:textColor="@color/colorAccent"
-                android:textSize="16dp" />
-            <TextView
-                android:id="@+id/tone_amount6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="10dp"
-                android:text=""
-                android:textColor="@color/colorAccent"
-                android:textSize="16dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layout7"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:layout_below="@+id/layout6"
-            android:layout_marginEnd="12dp">
-            <TextView
-                android:id="@+id/tone_label7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_alignParentLeft="true"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/colorAccent"
-                android:text=""
-                android:textSize="16dp" />
-            <TextView
-                android:id="@+id/tone_amount7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="10dp"
-                android:text=""
-                android:textColor="@color/colorAccent"
-                android:textSize="16dp" />
-        </LinearLayout>
         <TextView
             android:id="@+id/song_title_label"
             android:text="Song Title"
             android:textColor="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/layout7"
+            android:layout_below="@id/layout5"
             android:textSize="16sp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="130dp"
             android:layout_centerInParent="true"
             />
     </RelativeLayout>

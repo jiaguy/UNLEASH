@@ -47,6 +47,14 @@ public class MainActivity extends Activity
             AuthenticationClient.openLoginActivity(this, REQUEST_CODE, request);
         }
 
+        ImageView phoneButton = (ImageView) findViewById(R.id.phone_btn);
+        phoneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //
+            }
+        });
+
         Button talkButton = (Button) findViewById(R.id.talk_button_view);
         talkButton.setOnClickListener(new View.OnClickListener() {
             @Override

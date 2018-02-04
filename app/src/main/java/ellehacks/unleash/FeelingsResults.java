@@ -128,25 +128,6 @@ public class FeelingsResults extends AppCompatActivity implements
                 count++;
             }
 
-            /*for (int i = count; i <= 7; i ++) {
-                TextView toneLabel6 = (TextView) findViewById(R.id.tone_label6);
-                TextView toneAmount6 = (TextView) findViewById(R.id.tone_amount6);
-                TextView toneLabel7 = (TextView) findViewById(R.id.tone_label7);
-                TextView toneAmount7 = (TextView) findViewById(R.id.tone_amount7);
-
-                String toneLabelID = "tone_label" + count;
-                String toneAmountID = "tone_amount" + count;
-                int labelID = getResources().getIdentifier(toneLabelID, "id", getPackageName());
-                int amountID = getResources().getIdentifier(toneAmountID, "id", getPackageName());
-                TextView toneLabel = (TextView) findViewById(labelID);
-                TextView toneAmount = (TextView) findViewById(amountID);
-
-                toneLabel.setVisibility(View.INVISIBLE);
-                toneAmount.setVisibility(View.INVISIBLE);
-
-                count ++;
-            }*/
-
         }else{
             //TODO: Handle case for when not enough data was available
         }

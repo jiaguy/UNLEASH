@@ -9,8 +9,6 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
-
-
     <include
         layout="@layout/app_bar_unleash"
         android:layout_width="match_parent"
