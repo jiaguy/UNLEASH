@@ -39,6 +39,7 @@ public class FeelingsResults extends AppCompatActivity implements
 
     private MoodPlaylist playlist;
 
+
     // Request code that will be used to verify if the result comes from correct activity
     // Can be any integer
     private static final int REQUEST_CODE = 1337;
@@ -70,21 +71,30 @@ public class FeelingsResults extends AppCompatActivity implements
         });
 
         final ImageView playpause = (ImageView) findViewById(R.id.play_button);
+        final TextView songName = (TextView) findViewById(R.id.song_title_label);
+        final TextView artistName = (TextView) findViewById(R.id.song_artist_label);
+
 
         playpause.setOnClickListener(new View.OnClickListener() {
             boolean isPlaying = true;
+
             @Override
             public void onClick(View view) {
-                if(isPlaying == true) {
+                if (isPlaying == true) {
                     playpause.setImageResource(R.drawable.play_button);
                     mPlayer.pause(null);
                     isPlaying = false;
-                }
-                else {
+
+
+                } else {
                     playpause.setImageResource(R.drawable.pause_button);
                     mPlayer.resume(null);
                     isPlaying = true;
+                    String trackName = mPlayer.getMetadata().currentTrack.name;
+                    System.out.println(trackName);
                 }
+                artistName.setText(mPlayer.getMetadata().currentTrack.artistName);
+                songName.setText(mPlayer.getMetadata().currentTrack.name);
             }
         });
 
@@ -94,6 +104,8 @@ public class FeelingsResults extends AppCompatActivity implements
             @Override
             public void onClick(View view) {
                 mPlayer.skipToPrevious(null);
+                artistName.setText(mPlayer.getMetadata().prevTrack.artistName);
+                songName.setText(mPlayer.getMetadata().prevTrack.name);
             }
         });
 
@@ -103,6 +115,8 @@ public class FeelingsResults extends AppCompatActivity implements
             @Override
             public void onClick(View view) {
                 mPlayer.skipToNext(null);
+                artistName.setText(mPlayer.getMetadata().nextTrack.artistName);
+                songName.setText(mPlayer.getMetadata().nextTrack.name);
             }
         });
 
@@ -128,11 +142,11 @@ public class FeelingsResults extends AppCompatActivity implements
                 count++;
             }
 
-        }else{
+        } else {
             //TODO: Handle case for when not enough data was available
         }
-
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
@@ -149,6 +163,7 @@ public class FeelingsResults extends AppCompatActivity implements
                         mPlayer = spotifyPlayer;
                         mPlayer.addConnectionStateCallback(FeelingsResults.this);
                         mPlayer.addNotificationCallback(FeelingsResults.this);
+
                     }
 
                     @Override
@@ -160,9 +175,10 @@ public class FeelingsResults extends AppCompatActivity implements
         }
     }
 
-    protected void playSongs(String mood){
+    public void playSongs(String mood){
         mPlayer.setShuffle(null, true);
         mPlayer.playUri(null, playlist.getPlaylist(mood), 0, 0);
+
     }
 
     public void returnHome(){
@@ -200,7 +216,10 @@ public class FeelingsResults extends AppCompatActivity implements
     public void onLoggedIn() {
         Log.d("MainActivity", "User logged in");
         playSongs(sortedToneList.get(0).getToneName());
-
+        TextView songName = (TextView) findViewById(R.id.song_title_label);
+        TextView artistName = (TextView) findViewById(R.id.song_artist_label);
+        songName.setText(mPlayer.getMetadata().currentTrack.name);
+        artistName.setText(mPlayer.getMetadata().currentTrack.artistName);
     }
 
     @Override
