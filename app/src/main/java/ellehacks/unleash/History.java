@@ -4,7 +4,8 @@ package ellehacks.unleash;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-        import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
         import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -31,13 +32,16 @@ public class History extends AppCompatActivity {
         //Toolbar toolbar = (Toolbar findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
-        /*ImageButton home = (ImageButton) findViewById(R.id.home_btn);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+        ImageButton home = (ImageButton) findViewById(R.id.home_btn);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 returnHome();
             }
-        });*/
+        });
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
@@ -56,7 +60,6 @@ public class History extends AppCompatActivity {
         Movie movie = new Movie("Mad Max: Fury Road", "Action & Adventure", "2015");
         movieList.add(movie);
 
-        
         movie = new Movie("Inside Out", "Animation, Kids & Family", "2015");
         movieList.add(movie);
 
