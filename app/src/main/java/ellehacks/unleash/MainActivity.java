@@ -2,6 +2,7 @@ package ellehacks.unleash;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.spotify.sdk.android.authentication.AuthenticationClient;
 import com.spotify.sdk.android.authentication.AuthenticationRequest;
@@ -51,7 +53,26 @@ public class MainActivity extends Activity
         phoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //
+                TextView phone_box = (TextView) findViewById(R.id.phone_box);
+                if(phone_box.getVisibility() == View.INVISIBLE){
+                    Animation startAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in_animation);
+                    phone_box.setVisibility(View.VISIBLE);
+                    phone_box.startAnimation(startAnimation);
+                }else{
+                    phone_box.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
+        final TextView phone_box = (TextView) findViewById(R.id.phone_box);
+        phone_box.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                if(phone_box.getVisibility() == View.VISIBLE){
+                    Uri uri = Uri.parse("http://www.mentalhealthhelpline.ca/");
+                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                    startActivity(intent);
+                }
             }
         });
 
