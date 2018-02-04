@@ -5,7 +5,15 @@ import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Date;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -48,9 +56,10 @@ public class EnterFeelings extends AppCompatActivity {
                     Date date = Calendar.getInstance().getTime();
                     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                     //save the entry
-                    writeToFile(mood);
-                    writeToFile(sdf.format(date));
-                    writeToFile(result);
+                    writeToFile(mood, getApplicationContext());
+                    writeToFile(result, getApplicationContext());
+                    writeToFile(sdf.format(date), getApplicationContext());
+                    System.out.println("*****************Mood: " + mood);
 
                     //launch next activity
                     launchFeelingsResultsActivity();
@@ -89,17 +98,42 @@ public class EnterFeelings extends AppCompatActivity {
         startActivity(new Intent(this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
     }
 
-    public void writeToFile(String message){
-        String filename = "journal.txt";
-        FileOutputStream outputStream;
-
+    private void writeToFile(String data,Context context) {
         try {
-            outputStream = openFileOutput(filename, Context.MODE_APPEND);
-            outputStream.write(message.getBytes());
-            outputStream.write("*".getBytes());// use a * as delimiter
-            outputStream.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+
+            String journal = "";
+
+            try {
+                InputStream inputStream = getApplicationContext().openFileInput("journal.txt");
+
+                if ( inputStream != null ) {
+                    InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                    BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                    String receiveString = "";
+                    StringBuilder stringBuilder = new StringBuilder();
+
+                    while ( (receiveString = bufferedReader.readLine()) != null ) {
+                        stringBuilder.append(receiveString);
+                    }
+
+                    inputStream.close();
+                    journal = stringBuilder.toString();
+                }
+            }
+            catch (FileNotFoundException e) {
+                Log.e("login activity", "File not found: " + e.toString());
+            } catch (IOException e) {
+                Log.e("login activity", "Can not read file: " + e.toString());
+            }
+
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("journal.txt", Context.MODE_PRIVATE));
+            outputStreamWriter.write(journal);
+            outputStreamWriter.write(data);
+            outputStreamWriter.write("*");
+            outputStreamWriter.close();
+        }
+        catch (IOException e) {
+            Log.e("Exception", "File write failed: " + e.toString());
         }
     }
 

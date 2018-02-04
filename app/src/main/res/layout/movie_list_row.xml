@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:textColor="@color/title"
+        android:textColor="@color/colorAccent"
         android:textSize="16dp"
         android:textStyle="bold" />
 
@@ -24,6 +24,8 @@
         android:id="@+id/entry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/year"
+        android:textSize="14dp"
         android:layout_below="@id/mood" />
 
     <TextView
@@ -31,6 +33,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:textColor="@color/year" />
+        android:textColor="@color/colorAccent" />
 
 </RelativeLayout>

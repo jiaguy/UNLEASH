@@ -9,9 +9,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
         import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
         import java.util.List;
 
@@ -44,7 +51,10 @@ public class History extends AppCompatActivity {
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this,
+                LinearLayoutManager.VERTICAL);
+        dividerItemDecoration.setDrawable(this.getResources().getDrawable(R.drawable.divider));
+        recyclerView.addItemDecoration(dividerItemDecoration);
 
         recyclerView.setAdapter(mAdapter);
 
@@ -52,53 +62,43 @@ public class History extends AppCompatActivity {
     }
 
     private void prepareMovieData() {
-        JournalEntry movie = new JournalEntry("Mad Max: Fury Road", "Action & Adventure", "2015");
-        movieList.add(movie);
-        
-        movie = new JournalEntry("Inside Out", "Animation, Kids & Family", "2015");
-        movieList.add(movie);
 
-        movie = new JournalEntry("Star Wars: Episode VII - The Force Awakens", "Action", "2015");
-        movieList.add(movie);
+        String journal = "";
 
-        movie = new JournalEntry("Shaun the Sheep", "Animation", "2015");
-        movieList.add(movie);
+        try {
+            InputStream inputStream = getApplicationContext().openFileInput("journal.txt");
 
-        movie = new JournalEntry("The Martian", "Science Fiction & Fantasy", "2015");
-        movieList.add(movie);
+            if ( inputStream != null ) {
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                String receiveString = "";
+                StringBuilder stringBuilder = new StringBuilder();
 
-        movie = new JournalEntry("Mission: Impossible Rogue Nation", "Action", "2015");
-        movieList.add(movie);
+                while ( (receiveString = bufferedReader.readLine()) != null ) {
+                    stringBuilder.append(receiveString);
+                }
 
-        movie = new JournalEntry("Up", "Animation", "2009");
-        movieList.add(movie);
+                inputStream.close();
+                journal = stringBuilder.toString();
+            }
+        }
+        catch (FileNotFoundException e) {
+            Log.e("login activity", "File not found: " + e.toString());
+        } catch (IOException e) {
+            Log.e("login activity", "Can not read file: " + e.toString());
+        }
 
-        movie = new JournalEntry("Star Trek", "Science Fiction", "2009");
-        movieList.add(movie);
+        System.out.println("********** JOURNAL: \n" + journal);
+        if(!journal.isEmpty()){
+            String[] splitJournal = journal.split("\\*");
+            for(int i = 0; i < splitJournal.length-1; i++){
+                String _mood = splitJournal[i];
+                String _entry = splitJournal[++i];
+                String _year = splitJournal[++i];
 
-        movie = new JournalEntry("The LEGO JournalEntry", "Animation", "2014");
-        movieList.add(movie);
-
-        movie = new JournalEntry("Iron Man", "Action & Adventure", "2008");
-        movieList.add(movie);
-
-        movie = new JournalEntry("Aliens", "Science Fiction", "1986");
-        movieList.add(movie);
-
-        movie = new JournalEntry("Chicken Run", "Animation", "2000");
-        movieList.add(movie);
-
-        movie = new JournalEntry("Back to the Future", "Science Fiction", "1985");
-        movieList.add(movie);
-
-        movie = new JournalEntry("Raiders of the Lost Ark", "Action & Adventure", "1981");
-        movieList.add(movie);
-
-        movie = new JournalEntry("Goldfinger", "Action & Adventure", "1965");
-        movieList.add(movie);
-
-        movie = new JournalEntry("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        movieList.add(movie);
+                movieList.add(new JournalEntry(_mood, _entry, _year));
+            }
+        }
 
         mAdapter.notifyDataSetChanged();
     }
