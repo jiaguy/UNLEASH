@@ -41,6 +41,7 @@ public class FeelingsResults extends AppCompatActivity implements
 
     // Request code that will be used to verify if the result comes from correct activity
     // Can be any integer
+
     private static final int REQUEST_CODE = 1337;
 
     @Override
@@ -69,8 +70,15 @@ public class FeelingsResults extends AppCompatActivity implements
             }
         });
 
-        final ImageView playpause = (ImageView) findViewById(R.id.play_button);
+        ImageButton history = (ImageButton) findViewById(R.id.history_btn);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchHistoryActivity();
+            }
+        });
 
+        final ImageView playpause = (ImageView) findViewById(R.id.play_button);
         playpause.setOnClickListener(new View.OnClickListener() {
             boolean isPlaying = true;
             @Override
@@ -89,7 +97,6 @@ public class FeelingsResults extends AppCompatActivity implements
         });
 
         final ImageView skipStartButton = (ImageView) findViewById(R.id.skip_to_start_button);
-
         skipStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,7 +105,6 @@ public class FeelingsResults extends AppCompatActivity implements
         });
 
         final ImageView skipButton = (ImageView) findViewById(R.id.skip_button);
-
         skipButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,7 +137,6 @@ public class FeelingsResults extends AppCompatActivity implements
         }else{
             //TODO: Handle case for when not enough data was available
         }
-
     }
 
     @Override
@@ -167,6 +172,10 @@ public class FeelingsResults extends AppCompatActivity implements
 
     public void returnHome(){
         startActivity(new Intent(this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+    }
+
+    public void launchHistoryActivity(){
+        startActivity(new Intent(this, History.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
     }
 
     @Override

@@ -53,6 +53,14 @@ public class EnterFeelings extends AppCompatActivity {
             }
         });
 
+        ImageButton history = (ImageButton) findViewById(R.id.history_btn);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchHistoryActivity();
+            }
+        });
+
     }
 
     public void launchFeelingsResultsActivity() {
@@ -63,5 +71,9 @@ public class EnterFeelings extends AppCompatActivity {
 
     public void returnHome(){
         startActivity(new Intent(this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+    }
+
+    public void launchHistoryActivity(){
+        startActivity(new Intent(this, History.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
     }
 }

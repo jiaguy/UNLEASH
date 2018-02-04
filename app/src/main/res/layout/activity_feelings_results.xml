@@ -26,6 +26,19 @@
         android:layout_centerHorizontal="true">
 
         <ImageButton
+            android:id="@+id/history_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:src="@drawable/history_button"
+            android:tint="@color/colorAccent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="7dp"
+            android:background="?android:selectableItemBackground" />
+
+        <ImageButton
             android:id="@+id/home_btn"
             android:layout_width="44dp"
             android:layout_height="44dp"
