@@ -30,19 +30,19 @@ public class MoodPlaylist {
         Random random = new Random();
 
         switch(tone){
-            case "anger":
+            case "Anger":
                 return anger[random.nextInt(anger.length)];
-            case "fear":
+            case "Fear":
                 return fear[random.nextInt(fear.length)];
-            case "joy":
+            case "Joy":
                 return joy[random.nextInt(joy.length)];
-            case "sadness":
+            case "Sadness":
                 return sadness[random.nextInt(sadness.length)];
-            case "analytical":
+            case "Analytical":
                 return analytical[random.nextInt(analytical.length)];
-            case "confident":
+            case "Confident":
                 return confident[random.nextInt(confident.length)];
-            case "tentative":
+            case "Tentative":
                 return tentative[random.nextInt(tentative.length)];
             default:
                 return null;

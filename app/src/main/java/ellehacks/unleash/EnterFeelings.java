@@ -9,10 +9,14 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Button;
 
+import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.ToneScore;
+
+import java.util.List;
+
 public class EnterFeelings extends AppCompatActivity {
 
     private String caller;
-
+    public static List<ToneScore> sortedToneList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +35,7 @@ public class EnterFeelings extends AppCompatActivity {
             public void onClick(View view) {
                 EditText feelingsBox = (EditText) findViewById(R.id.feelings_textbox);
                 String result = feelingsBox.getText().toString();      // result from textbox
-                ToneAnalyze.analyzedTone(result);
+                sortedToneList = ToneAnalyze.analyzedTone(result);
                 launchFeelingsResultsActivity();
                 if(!((feelingsBox.getText()).toString().trim().isEmpty())){
                     launchFeelingsResultsActivity();
